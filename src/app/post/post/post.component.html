@@ -1,8 +1,22 @@
-<ng-container *ngIf="post && user">
-  <h2>Post : </h2>
-  <p>Ecrit par : {{ user.firstName }} {{user.lastName}}</p>
-  <p> Contenu post : {{post.content}}</p>
-  <img src="{{post.img}}">
-  <h3>Commentaires</h3>
-  <app-comment-list [post]="post"></app-comment-list>
-</ng-container>
+<p *ngIf="post && user">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>
+        Ecrit par : {{ user.firstName }} {{user.lastName}} le {{post.timestamp | date:'dd/mm/yyyy HH:mm'}}
+      </mat-card-title>
+    </mat-card-header>
+    <img *ngIf="post.img" mat-card-image src="{{post.img}}" alt="Post photo">
+    <mat-card-content>
+      <p>
+       {{post.content}}
+      </p>
+      <h3>Commentaires</h3>
+      <app-comment-list [post]="post"></app-comment-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</p>

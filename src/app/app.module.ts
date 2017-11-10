@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {PostModule} from './post/post.module';
 import {RouterModule} from '@angular/router';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import {RouterModule} from '@angular/router';
   imports: [
     BrowserModule,
     PostModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

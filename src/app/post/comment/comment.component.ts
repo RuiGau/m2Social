@@ -12,7 +12,9 @@ export class CommentComponent implements OnInit {
 
   @Input() comment: Comment;
   user: User;
-  constructor(private userService: UserService) { }
+
+  constructor(private userService: UserService) {
+  }
 
   ngOnInit() {
     this.userService.get(this.comment.userId).subscribe((user: User) => this.user = user);

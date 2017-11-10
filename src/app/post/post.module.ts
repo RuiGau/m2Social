@@ -10,6 +10,8 @@ import {UserService} from './user.service';
 import { CommentComponent } from './comment/comment.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
 import {CommentService} from './comment.service';
+import {MatCardModule} from '@angular/material';
+import {MatButtonModule} from '@angular/material/button';
 
 const routes: Routes = [
   {
@@ -29,7 +31,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [PostService, UserService, CommentService],
   declarations: [PostListComponent, PostRootComponent, PostComponent, CommentComponent, CommentListComponent]

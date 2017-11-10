@@ -1,4 +1,6 @@
 <ng-container *ngIf="comment && user">
-  <p>Ecrit par : {{ user.firstName }} {{user.lastName}}</p>
+  <p>Ecrit par : {{ user.firstName }} {{user.lastName}}
+    le {{comment.timestamp | date:'dd/mm/yyyy HH:mm'}}
+  </p>
   <p> Contenu du commentaire : {{comment.content}}</p>
 </ng-container>
