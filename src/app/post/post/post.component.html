@@ -1,5 +1,8 @@
 <ng-container *ngIf="post && user">
+  <h2>Post : </h2>
   <p>Ecrit par : {{ user.firstName }} {{user.lastName}}</p>
-  <p> {{post.content}}</p>
+  <p> Contenu post : {{post.content}}</p>
   <img src="{{post.img}}">
+  <h3>Commentaires</h3>
+  <app-comment-list [post]="post"></app-comment-list>
 </ng-container>
