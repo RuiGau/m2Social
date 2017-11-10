@@ -1,0 +1,5 @@
+<ng-container *ngIf="post && user">
+  <p>Ecrit par : {{ user.firstName }} {{user.lastName}}</p>
+  <p> {{post.content}}</p>
+  <img src="{{post.img}}">
+</ng-container>
